@@ -102,3 +102,41 @@ plt.show()
 plt.scatter(df_concat.Growth_Rate, df_concat.ikibinon_population, color = "blue")
 plt.show()
 
+#Scatter düzeyinde ikibinon yılında ülkelerin popülasyonuna bağlı olarak ekonomilerinin ne kadar geliştiği grafiğini oluşturduk
+
+plt.scatter(df_concat_son.ikibinon_population, df_concat_son.ikibinon, color = "red")
+plt.show()
+
+#Bar düzeyinde kıtalara göre area büyüklüğünün karşılaştırılması
+
+plt.bar(df_concat_son.Continent, df_concat_son.Area, width = 0.5)
+plt.show()
+
+#Binlere ayırma 
+
+binler = np.array_split(df_concat_son, 17)
+
+for i, binary in enumerate(binler):
+    print(f"Bin {i+1}: {binary}")
+
+#Scatter düzeyinde ülkelerin arealarının karşılaştırılması
+
+plt.scatter(binary.CCA3, binary.Area, color = "red")
+plt.show()
+
+#Tanımladığımız binary ile turta şeklinde areaların karşılaştırılması 
+
+binary['Area'].plot(kind = 'pie', figsize = (10,5), shadow = True, autopct ='%1f%%')
+plt.title('Areaların karşılaştırılması')
+plt.axis('equal')
+plt.show()
+
+#Tanımladığımız binary ile turta şeklinde densitylerinin karşılaştırılması
+binary['Density'].plot(kind = 'pie', figsize = (10,5), shadow = True, autopct ='%1f%%')
+plt.title('Areaların karşılaştırılması')
+plt.axis('equal')
+plt.show()
+
+
+
+
