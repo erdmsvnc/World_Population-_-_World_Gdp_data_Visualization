@@ -168,6 +168,7 @@ plt.show()
 
 
 #Tanımladığımız binary ile turta şeklinde densitylerinin karşılaştırılması
+
 binary['Density'].plot(kind = 'pie', figsize = (10,5), shadow = True, autopct ='%1f%%')
 plt.title('Areaların karşılaştırılması')
 plt.axis('equal')
@@ -176,7 +177,9 @@ plt.show()
 <img width="744" alt="Ekran Resmi 2024-03-04 14 32 01" src="https://github.com/buzzi0/w_p-_w_g_d/assets/103946477/c12b989d-4ffb-443d-9a6e-43048fe6a4bc">
 
 
+
 #1970 ile 2022 arasındaki nüfus değişimi 
+
 plt.subplots(figsize=(10,5))
 trend = df_concat_son.iloc[:,47:54].sum().sort_values(ascending=True)
 sns.lineplot(x=trend.index, y=trend.values, marker="o")
@@ -184,6 +187,7 @@ plt.xticks("Years")
 plt.ylabel("Population")
 plt.title("World Population Trend (1970-2022)")
 plt.show()
+
 
 
 
