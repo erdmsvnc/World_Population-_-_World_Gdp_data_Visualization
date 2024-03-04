@@ -1,10 +1,11 @@
 # w_p-_w_g_d
-# Gerekli kütüphanlerimizi yüklüyoruz
+
+#Gerekli kütüphanelerimizi import ediyoruz
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-#İlk kütüphanemizi yüklüyoruz 
+#İlk datasetimizi yüklüyoruz 
 df = pd.read_csv("world_gdp_data.csv", encoding='latin-1')
 silinecek_sutunlar = ["country_name","indicator_name"]
 
@@ -15,7 +16,7 @@ df2 = df.drop(silinecek_sutunlar, axis=1)
 ortalamalar = df2.mean() 
 df2 = df.fillna(ortalamalar)
 
-#İkinci kütüphanemizi yüklüyoruz
+#İkinci datasetimizi yüklüyoruz
 df1 = pd.read_csv("world_population.csv", encoding='latin-1')
 
 #Birinci ve ikinci kütüphanelerimizi yatay olarak birleştiriyoruz
