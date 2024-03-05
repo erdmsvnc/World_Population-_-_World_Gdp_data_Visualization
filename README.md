@@ -120,20 +120,27 @@ plt.bar(df_concat_son.Continent,df_concat_son.ikibinon_population, width=0.5)
 plt.ylabel("Nüfus Sayısı")
 plt.xlabel("Kıta İsimleri")
 plt.title("İkibinon Senesinin Nüfus Dağılımı")
+plt.gcf().axes[0].yaxis.get_major_formatter().set_scientific(False)
+
 plt.show()
 ```
-<img width="601" alt="Ekran Resmi 2024-03-04 14 25 19" src="https://github.com/buzzi0/w_p-_w_g_d/assets/103946477/e761261a-e3ac-41d4-a6ce-ff794161dbd9">
 
- * İçerik : İkibinon yılında kıtaların toplam nüfus sayısını görebilir ve bu bağlamda karşılaştırmalar yapabiliriz
+<img width="656" alt="Ekran Resmi 2024-03-05 10 29 12" src="https://github.com/buzzi0/w_p-w_g_d/assets/103946477/382fa01a-2153-496f-9701-eefb230696e9">
+
+
+ * İçerik : İkibinon yılında kıtaların toplam nüfus sayısını görebilir ve bu bağlamda karşılaştırmalar yapabiliriz. Beşinci satırdaki kodumuzda tabloda istemediğimiz 'e' li değerleri kaldırmamızı sağlar
 
  Scatter düzeyinde ülkelerin ikibinon yılında büyüme oranı değerleriyle eşleştirildiği grafiği oluşturduk
 ---
 ```
 plt.scatter(df_concat.Growth_Rate, df_concat.ikibinon_population, color = "blue")
+plt.gcf().axes[0].yaxis.get_major_formatter().set_scientific(False)
+
 plt.show()
 ```
 
-<img width="574" alt="Ekran Resmi 2024-03-04 14 27 00" src="https://github.com/buzzi0/w_p-_w_g_d/assets/103946477/3d35bbf6-83e6-4acb-b5d7-cebaec5f6269">
+<img width="628" alt="Ekran Resmi 2024-03-05 10 28 00" src="https://github.com/buzzi0/w_p-w_g_d/assets/103946477/ef95573c-cd40-44a1-bb05-100049c7152a">
+
 
  * İçerik : Ülkelerin 2010 senesinde ki nüfusu ile genel büyüme oranını karşılaştırabiliriz
 
@@ -142,10 +149,12 @@ plt.show()
  ---
 ```
 plt.scatter(df_concat_son.ikibinon_population, df_concat_son.ikibinon, color = "red")
+plt.gcf().axes[0].xaxis.get_major_formatter().set_scientific(False)
+
 plt.show()
 ```
 
-<img width="610" alt="Ekran Resmi 2024-03-04 14 27 26" src="https://github.com/buzzi0/w_p-_w_g_d/assets/103946477/32b39052-aa51-4b6e-ada9-e9c1f6c45e3c">
+<img width="551" alt="Ekran Resmi 2024-03-05 10 31 22" src="https://github.com/buzzi0/w_p-w_g_d/assets/103946477/03680bb6-3adc-47ba-b61c-0d547acbb019">
 
  * İçerik : Ülkelerin nüfusuna bağlı olarak ekonomilerininin ne kadar büyüdüğünü karşılaştırabiliriz
 
@@ -154,10 +163,13 @@ plt.show()
  ---
 ```
 plt.bar(df_concat_son.Continent, df_concat_son.Area, width = 0.5)
+plt.gcf().axes[0].yaxis.get_major_formatter().set_scientific(False)
+
 plt.show()
 ```
 
-<img width="628" alt="Ekran Resmi 2024-03-04 14 28 22" src="https://github.com/buzzi0/w_p-_w_g_d/assets/103946477/8fa7463b-bedf-489e-b3de-3dbe90e38e2b">
+<img width="630" alt="Ekran Resmi 2024-03-05 10 24 37" src="https://github.com/buzzi0/w_p-w_g_d/assets/103946477/5c52b6c6-1e5e-4584-89fa-3a6551e30f08">
+
 
  * İçerik : Kıtaların toplam area büyüklüklerinin karşılaştırılması yapılabilir
  Binlere ayırma 
@@ -178,9 +190,13 @@ for i, binary in enumerate(binler):
  ---
 ```
 plt.scatter(binary.CCA3, binary.Area, color = "red")
+plt.gcf().axes[0].yaxis.get_major_formatter().set_scientific(False)
+
 plt.show()
 ```
-<img width="1456" alt="Ekran Resmi 2024-03-04 14 30 54" src="https://github.com/buzzi0/w_p-_w_g_d/assets/103946477/6fa507d2-05ce-4071-9c59-f59c78d28824">
+
+<img width="1480" alt="Ekran Resmi 2024-03-05 10 20 02" src="https://github.com/buzzi0/w_p-w_g_d/assets/103946477/357c2ec0-49e9-4f05-a039-440dfed8cd6c">
+
 
  * İçerik : Ülkelerin area karşılaştırılmasının noktalar ile yapılmasına olanak sağlarız
 
@@ -192,6 +208,7 @@ plt.show()
 binary['Area'].plot(kind = 'pie', figsize = (10,5), shadow = True, autopct ='%1.2f%%')
 plt.title('Areaların karşılaştırılması')
 plt.axis('equal')
+
 plt.show()
 ```
 
@@ -206,6 +223,7 @@ plt.show()
 binary['Density'].plot(kind = 'pie', figsize = (10,5), shadow = True, autopct ='%1.2f%%')
 plt.title('Areaların karşılaştırılması')
 plt.axis('equal')
+
 plt.show()
 ```
 
@@ -223,12 +241,14 @@ sns.lineplot(x=trend.index, y=trend.values, marker="o")
 plt.xticks("Years")
 plt.ylabel("Population")
 plt.title("World Population Trend (1970-2022)")
+plt.gcf().axes[0].yaxis.get_major_formatter().set_scientific(False)
+
 plt.show()
 ```
 
 
 
-<img width="1515" alt="Ekran Resmi 2024-03-04 16 45 25" src="https://github.com/buzzi0/w_p-_w_g_d/assets/103946477/4b5673da-5d20-4213-b04a-266cfab82186">
+<img width="1538" alt="Ekran Resmi 2024-03-05 10 17 56" src="https://github.com/buzzi0/w_p-w_g_d/assets/103946477/a4a14046-06e4-4b32-835d-63cd57b8bdc8">
 
 
 * İçerik : 1970 ile 2022 yılları arasında 10'ar artış ile belirlediğimiz yılların yılları içerisindeki nüfus değişimini görmemizi sağlar
